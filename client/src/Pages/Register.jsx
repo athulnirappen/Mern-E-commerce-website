@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import * as Yup from "yup";
 
+
+
 const Register = () => {
   const [inputs, setInputs] = useState({
     username: "",
@@ -43,7 +45,7 @@ const Register = () => {
       };
 
       const res = await axios.post(
-        "http://localhost:8000/api/auth/signup",
+        `${import.meta.env.VITE_BACKEND_URL}/api/auth/signup`,
         inputs,
         config
       );

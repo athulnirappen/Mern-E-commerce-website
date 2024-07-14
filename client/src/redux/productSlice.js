@@ -3,6 +3,8 @@ import axios from "axios";
 
 
 
+
+
 export const STATUSES = Object.freeze({
   SUCCESS: "SUCCESS",
   ERROR: "error",
@@ -43,7 +45,7 @@ export const fetchAllProducts = () => {
         try {
 
             const res = await axios.get(
-              "http://localhost:8000/api/product/getallproducts"
+              `${import.meta.env.VITE_BACKEND_URL}/api/product/getallproducts`
             );
             const data = await res.data.data
           

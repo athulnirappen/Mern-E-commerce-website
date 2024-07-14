@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 
+
 const Edit = () => {
 
   const navigate=useNavigate()
@@ -107,7 +108,9 @@ const Edit = () => {
       }
 
       const res = await axios.put(
-        `http://localhost:8000/api/product/editproduct/${id}`,formdata,config
+        `${import.meta.env.VITE_BACKEND_URL}/api/product/editproduct/${id}`,
+        formdata,
+        config
       );
 
       console.log(res);

@@ -3,6 +3,8 @@ import axios from "axios";
 import { Button, FileInput, Label, Modal, TextInput } from "flowbite-react";
 import { useState } from "react";
 
+
+
 const Add = ({ handleResponse }) => {
   const [openModal, setOpenModal] = useState(false);
 
@@ -80,7 +82,7 @@ const Add = ({ handleResponse }) => {
       };
 
       const res = await axios.post(
-        "http://localhost:8000/api/product/addproduct",
+        `${import.meta.env.VITE_BACKEND_URL}/api/product/addproduct`,
         data,
         config
       );

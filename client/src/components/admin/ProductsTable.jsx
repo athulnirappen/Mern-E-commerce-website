@@ -31,7 +31,7 @@ const ProductsTable = ({ serverResponse }) => {
 
   const handleDelete = async (id) => {
     const res = await axios.delete(
-      `http://localhost:8000/api/product/deleteproduct/${id}`
+      `${import.meta.env.VITE_BACKEND_URL}/api/product/deleteproduct/${id}`
     );
 
     if (res.status >= 200) {
